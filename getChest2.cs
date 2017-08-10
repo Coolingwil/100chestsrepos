@@ -10,7 +10,7 @@ public class getChest2 : MonoBehaviour {
 	bool canDestroy = false;
 
 	public Text countText;
-	public int count;
+	public static int count = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +24,8 @@ public class getChest2 : MonoBehaviour {
 		if (Input.GetKey (KeyCode.E) && canDestroy == true) {
 			Destroy (gameObject);
 			count = count + 1;
-			//ourComponent.text = "Chests Found:" + " " + count;
+			ourComponent.text = "Chests Found:" + " " + count;
 		}
-		ourComponent.text = "Chests Found:" + " " + count;
 	}
 
 
@@ -37,15 +36,5 @@ public class getChest2 : MonoBehaviour {
 	void OnTriggerExit (Collider other){
 		canDestroy = false;
 	}
-
-
-	//void OnTriggerEnter (Collider other)
-	//{
-	//	if (other.tag == "Player" && Input.GetKey(KeyCode.E)) {
-	//		Destroy (gameObject);
-	//		count = count + 1;
-	//		ourComponent.text = "Chests Found:" + " " + count;
-	//	}
-	//}
-
+		
 }
